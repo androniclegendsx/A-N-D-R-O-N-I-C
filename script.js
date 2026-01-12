@@ -36,18 +36,34 @@ const watchSynopsis = document.getElementById("watchSynopsis");
 const watchVideo = document.getElementById("watchVideo");
 const watchEpisodes = document.getElementById("watchEpisodes");
 
-// ========== OPEN / CLOSE WATCH PAGE ==========
-function buildEmbedUrl(obj) {
-  if (!obj) return "";
-  if (obj.youtubeId) {
-    return `https://www.youtube.com/embed/${obj.youtubeId}`;
+// ========== ODYSEE HELPER ==========
+
+// convert Odysee watch URL -> embed URL
+function odyseeWatchToEmbed(url) {
+  // watch: https://odysee.com/@channel:xyz/video-slug:abc
+  // embed: https://odysee.com/$/embed/@channel:xyz/video-slug:abc
+  return url.replace("https://odysee.com/", "https://odysee.com/$/embed/");
+}
+
+// get default embed URL for a content item (first episode or movie)
+function getDefaultEmbedUrl(item) {
+  if (!item) return "";
+
+  if (item.type === "movie" && item.odyseeUrl) {
+    return odyseeWatchToEmbed(item.odyseeUrl);
   }
-  if (obj.dmId) {
-    return `https://www.dailymotion.com/embed/video/${obj.dmId}`;
+
+  if (item.type === "series" && Array.isArray(item.episodes)) {
+    const firstWithUrl = item.episodes.find(ep => ep.odyseeUrl);
+    if (firstWithUrl) {
+      return odyseeWatchToEmbed(firstWithUrl.odyseeUrl);
+    }
   }
+
   return "";
 }
 
+// ========== OPEN / CLOSE WATCH PAGE ==========
 function openWatchPage(id) {
   const item = CONTENT_DB[id];
   if (!item) return;
@@ -59,17 +75,11 @@ function openWatchPage(id) {
   watchMeta.textContent = item.meta || "";
   watchSynopsis.textContent = item.synopsis || "";
 
-  // Default video = first episode with ID or movie trailer
-  let defaultVideo = buildEmbedUrl(item);
-  if (!defaultVideo && item.type === "series" && Array.isArray(item.episodes)) {
-    const firstWithId = item.episodes.find(
-      (ep) => ep.youtubeId || ep.dmId
-    );
-    defaultVideo = buildEmbedUrl(firstWithId);
-  }
-  watchVideo.src = defaultVideo;
+  // Default video (first Odysee URL)
+  const defaultVideo = getDefaultEmbedUrl(item);
+  watchVideo.src = defaultVideo || "";
 
-  // Episodes
+  // Episodes list
   watchEpisodes.innerHTML = "";
   if (item.type === "series" && Array.isArray(item.episodes)) {
     item.episodes.forEach((ep) => {
@@ -87,10 +97,9 @@ function openWatchPage(id) {
       `;
 
       card.addEventListener("click", () => {
-        const url = buildEmbedUrl(ep);
-        if (url) {
-          watchVideo.src = url;
-        }
+        if (!ep.odyseeUrl) return;
+        const url = odyseeWatchToEmbed(ep.odyseeUrl);
+        watchVideo.src = url;
       });
 
       watchEpisodes.appendChild(card);
@@ -102,7 +111,6 @@ function openWatchPage(id) {
   homeMain.classList.add("hidden");
   watchPage.classList.remove("hidden");
 
-  // Optional: avoid background scroll (not really needed now)
   document.body.classList.add("modal-open");
 }
 
@@ -126,12 +134,12 @@ document.querySelectorAll(".card").forEach((card) => {
 
 document.querySelectorAll(".play-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const id = btn.dataset.target;   // <== uses the attribute on the button
+    const id = btn.dataset.target;
     openWatchPage(id);
   });
 });
 
-// HORIZONTAL SCROLL ARROWS
+// ========== HORIZONTAL SCROLL ARROWS ==========
 const arrows = document.querySelectorAll(".rail-arrow");
 
 arrows.forEach((btn) => {
@@ -140,7 +148,7 @@ arrows.forEach((btn) => {
     const rail = document.getElementById(railId);
     if (!rail) return;
 
-    const scrollAmount = 300; // pixels per click
+    const scrollAmount = 300;
     if (btn.classList.contains("left")) {
       rail.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
@@ -149,7 +157,7 @@ arrows.forEach((btn) => {
   });
 });
 
-// ADVANCED SEARCH WITH VERTICAL RESULTS
+// ========== ADVANCED SEARCH WITH VERTICAL RESULTS ==========
 const searchInput = document.getElementById("searchInput");
 const sections = document.querySelectorAll("main .section");
 const searchSection = document.getElementById("searchSection");
@@ -159,7 +167,7 @@ if (searchInput && searchSection && searchList) {
   const allCards = Array.from(document.querySelectorAll(".card")).map(
     (card) => ({
       card,
-      section: card.closest(".section")
+      section: card.closest(".section"),
     })
   );
 

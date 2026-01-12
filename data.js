@@ -1,44 +1,113 @@
 // data.js
-// You can mix YouTube and Dailymotion. Use whichever ID you have.
+// Odysee-only version: every video uses `odyseeUrl`.
+
+// Helper comment: store the NORMAL watch URL from Odysee.
+// Example pattern:
+//   https://odysee.com/@ChannelName:xyz/video-slug:abc
 
 const CONTENT_DB = {
   "my-status": {
     title: "My Status as an Assassin Obviously Exceeds the Hero's",
     meta: "Anime • 2025 • 12 Episodes",
-    synopsis: "Akira Oda and his high school classmates are summoned to another world! While the other students are granted cheat abilities through the summoning, Akira merely gains the abilities of a mediocre “assassin.” However, his status soon surpasses “hero,” the strongest profession. After Akira becomes suspicious of the King behind the summoning, he is falsely framed for a crime and forced to flee. (Source: Crunchyroll)",
-    poster: "Posters/My Status.jpg",      // big poster
-    episodeThumb: "EPoster/My Status.jpg",      // ONE common thumb
+    synopsis:
+      "Akira Oda and his high school classmates are summoned to another world! While the other students are granted cheat abilities through the summoning, Akira merely gains the abilities of a mediocre “assassin.” However, his status soon surpasses “hero,” the strongest profession. After Akira becomes suspicious of the King behind the summoning, he is falsely framed for a crime and forced to flee. (Source: Crunchyroll)",
+    poster: "Posters/My Status.jpg",
+    episodeThumb: "EPoster/My Status.jpg",
     type: "series",
     episodes: [
-      { number: 1, name: "Episode 1", youtubeId: "ZBG1DxsaqiI" },
-      { number: 2, name: "Episode 2", youtubeId: "7Sgc4Niaer0" },
-      { number: 3, name: "Episode 3", youtubeId: "wAwHTsK512o" },
-      { number: 4, name: "Episode 4", youtubeId: "rK9lmOOkg4A" },
-      { number: 5, name: "Episode 5", youtubeId: "KEJR9EDRRiQ" },
-      { number: 6, name: "Episode 6", youtubeId: "D2rUpUf4IDM" },
-      { number: 7, name: "Episode 7", youtubeId: "MzWZm5l1I3g" },
-      { number: 8, name: "Episode 8", youtubeId: "GGi0mGDnc0M" },
-      { number: 9, name: "Episode 9", youtubeId: "rdmpTsQLwGs" },
-      { number: 10, name: "Episode 10", youtubeId: "YJjopvCmNXg" },
-      { number: 11, name: "Episode 11", youtubeId: "CHOjUA8DLQM" },
-      { number: 12, name: "Episode 12", youtubeId: "IdSnsAJmhrI" },
+      {
+        number: 1,
+        name: "Episode 1",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E01-1080p-x264-WEB-DL--Multi-Audio--Esub:a"
+      },
+      {
+        number: 2,
+        name: "Episode 2",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E02-1080p-x264-WEB-DL--Multi-Audio--Esub:3"
+      },
+      {
+        number: 3,
+        name: "Episode 3",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E03-1080p-x264-WEB-DL--Multi-Audio--Esub:2"
+      },
+      {
+        number: 4,
+        name: "Episode 4",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E04-1080p-x264-WEB-DL--Multi-Audio--Esub:4ecd48e9c38d8ed990f8d9bf29d74f9e4bd47f23"
+      },
+      {
+        number: 5,
+        name: "Episode 5",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E05-1080p-x264-WEB-DL--Multi-Audio--Esub:b"
+      },
+      {
+        number: 6,
+        name: "Episode 6",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E06-1080p-x264-WEB-DL--Multi-Audio--Esub:f"
+      },
+      {
+        number: 7,
+        name: "Episode 7",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E07-1080p-x264-WEB-DL--Multi-Audio--Esub:c"
+      },
+      {
+        number: 8,
+        name: "Episode 8",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E08-1080p-x264-WEB-DL--Multi-Audio--Esub:8"
+      },
+      {
+        number: 9,
+        name: "Episode 9",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E09-1080p-x264-WEB-DL--Multi-Audio--Esub:8"
+      },
+      {
+        number: 10,
+        name: "Episode 10",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E10-1080p-x264-WEB-DL--Multi-Audio--Esub:a3dfe7513fcb4a75abcdcceec13e378fbab8ffe6"
+      },
+      {
+        number: 11,
+        name: "Episode 11",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E11-1080p-x264-WEB-DL--Multi-Audio--Esub:4"
+      },
+      {
+        number: 12,
+        name: "Episode 12",
+        odyseeUrl:
+          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E12-1080p-x264-WEB-DL--Multi-Audio--Esub:a"
+      },
     ]
   },
 
-  "sentenced": {
+  sentenced: {
     title: "Sentenced to Be a Hero",
-    meta: "Anime • 2026 • 1 Episodes",
+    meta: "Anime • 2026 • 1 Episode",
     synopsis:
       "In a world where heroism is a punishment, Xylo Forbartz, a condemned goddess killer, battles endless hordes of monstrous abominations as part of Penal Hero Unit 9004. Death is no escape, only a cycle of resurrection and relentless combat. But when Xylo encounters a mysterious new goddess, their unlikely alliance sparks a rebellion that could shatter the chains of eternal punishment. (Source: Crunchyroll) Note: Initially scheduled to air in October, 2025",
     poster: "Posters/Sentenced Poster.jpg",
     episodeThumb: "EPoster/Sentenced.jpg",
     type: "series",
     episodes: [
-      { number: 1, name: "Episode 1", youtubeId: "1Y_PVN15-tU" },
+      {
+        number: 1,
+        name: "Episode 1",
+        odyseeUrl: "https://odysee.com/Sentenced-to-Be-a-Hero-S01E01:6f80bdc7b2caa787e561661495efda245dd3c2cf"
+      }
     ]
   },
 
-    "one-punch-s3": {
+  "one-punch-s3": {
     title: "One Punch Man Season 3",
     meta: "Anime • 2025 • 5 Episodes",
     synopsis:
@@ -47,22 +116,42 @@ const CONTENT_DB = {
     episodeThumb: "EPoster/OnePunch.jpg",
     type: "series",
     episodes: [
-      { number: 1, name: "Episode 1", youtubeId: "Jhl5uvSjFSA" },
-      { number: 2, name: "Episode 2", youtubeId: "SSYa42CIuAU" },
-      { number: 3, name: "Episode 3", youtubeId: "uG8DFyE8cEc" },
-      { number: 4, name: "Episode 4", youtubeId: "MvISJD0x4hc" },
-      { number: 5, name: "Episode 5", youtubeId: "b1BxG0jwhH8" },
+      {
+        number: 1,
+        name: "Episode 1",
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E01-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:8"
+      },
+      {
+        number: 2,
+        name: "Episode 2",
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E02-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:a"
+      },
+      {
+        number: 3,
+        name: "Episode 3",
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E03-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:8"
+      },
+      {
+        number: 4,
+        name: "Episode 4",
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E04-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:a"
+      },
+      {
+        number: 5,
+        name: "Episode 5",
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E05-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:2d7fcc6179a16d088f2ac818c855cf5b68236556"
+      }
     ]
   },
 
-  "suzume": {
+  suzume: {
     title: "Suzume",
     meta: "Anime Movie • 2022",
     synopsis:
       "The story follows Suzume, a 17-year-old girl from a quiet Kyushu town who meets a young man looking for a door. They find a door within ruins in the mountain, and Suzume opens it. Soon, more doors begin to open around Japan, bringing disasters from the other side. The film depicts Suzume's liberation and growth, as she closes the doors that are causing disaster. (Source: Anime News Network)",
     poster: "Posters/SuzumePoster.jpg",
     type: "movie",
-    youtubeId: "mP0LvX-_jms",
+    odyseeUrl: "https://odysee.com/Suzume:849b7c0064753d54bed5038d731d35bcf91107be"
   },
 
   "stranger-things": {
@@ -74,20 +163,36 @@ const CONTENT_DB = {
     episodeThumb: "thumbs/stranger-things.jpg",
     type: "series",
     episodes: [
-      { number: 1, name: "Chapter One", youtubeId: "YOUTUBE_OR_DM_ID" },
-      { number: 2, name: "Chapter Two", youtubeId: "YOUTUBE_OR_DM_ID" },
-      { number: 3, name: "Chapter Three", youtubeId: "YOUTUBE_OR_DM_ID" },
-      { number: 4, name: "Chapter Four", youtubeId: "YOUTUBE_OR_DM_ID" }
+      {
+        number: 1,
+        name: "Chapter One",
+        odyseeUrl: "https://odysee.com/PUT-ST-EP1-WATCH-URL-HERE"
+      },
+      {
+        number: 2,
+        name: "Chapter Two",
+        odyseeUrl: "https://odysee.com/PUT-ST-EP2-WATCH-URL-HERE"
+      },
+      {
+        number: 3,
+        name: "Chapter Three",
+        odyseeUrl: "https://odysee.com/PUT-ST-EP3-WATCH-URL-HERE"
+      },
+      {
+        number: 4,
+        name: "Chapter Four",
+        odyseeUrl: "https://odysee.com/PUT-ST-EP4-WATCH-URL-HERE"
+      }
     ]
   },
 
-  "KvsG": {
+  KvsG: {
     title: "Godzilla x Kong The New Empire",
     meta: "Hollywood Movie • 2024",
     synopsis:
       "The story pits Godzilla and Kong against a colossal threat hidden within Earth, exploring their histories and the mysteries of Skull Island. Returning cast includes Rebecca Hall, Brian Tyree Henry, and Kaylee Hottle, joined by Dan Stevens. It grossed significantly worldwide as part of Legendary's Monsterverse.",
     poster: "Posters/KxG NE Poster.jpg",
     type: "movie",
-    youtubeId: "foQRdd_vpQU"
+    odyseeUrl: "https://odysee.com/PUT-GODZILLA-X-KONG-WATCH-URL-HERE"
   }
 };

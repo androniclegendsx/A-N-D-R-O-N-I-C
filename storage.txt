@@ -10,3 +10,31 @@
     </section>
 
     <a href="#netflix-series">Netflix Series</a>            Nav Bar
+    <a href="#hollywood">Hollywood</a>
+
+    <!-- Hollywood movies -->
+    <section id="hollywood" class="section glass">
+      <h2>Hollywood Movies</h2>
+
+      <div class="rail-wrapper">
+        <button class="rail-arrow left" data-rail="hollywoodRail">
+          &#10094;
+        </button>
+
+        <div class="card-rail" id="hollywoodRail">
+          <article class="card" data-detail="KvsG">
+            <img
+              src="Posters/KxG NE Poster.jpg"
+              alt="Godzilla x Kong The New Empire"
+            />
+            <h3>Godzilla x Kong The New Empire</h3>
+          </article>
+
+          <!-- more Hollywood cards here if you want -->
+        </div>
+
+        <button class="rail-arrow right" data-rail="hollywoodRail">
+          &#10095;
+        </button>
+
+        
