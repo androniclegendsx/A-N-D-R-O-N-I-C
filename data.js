@@ -6,7 +6,7 @@
 //   https://odysee.com/@ChannelName:xyz/video-slug:abc
 
 const CONTENT_DB = {
-  "my-status": {
+  mystatus: {
     title: "My Status as an Assassin Obviously Exceeds the Hero's",
     meta: "Anime • 2025 • 12 Episodes",
     synopsis:
@@ -37,7 +37,7 @@ const CONTENT_DB = {
         number: 4,
         name: "Episode 4",
         odyseeUrl:
-          "https://odysee.com/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E04-1080p-x264-WEB-DL--Multi-Audio--Esub:4ecd48e9c38d8ed990f8d9bf29d74f9e4bd47f23"
+          "https://odysee.com/@AndronicAnime:f/-AnimeDubHindi--My-Status-as-an-Assassin-Obviously-Exceeds-the-Hero%27s-S01E04-1080p-x264-WEB-DL--Multi-Audio--Esub:4"
       },
       {
         number: 5,
@@ -102,12 +102,12 @@ const CONTENT_DB = {
       {
         number: 1,
         name: "Episode 1",
-        odyseeUrl: "https://odysee.com/Sentenced-to-Be-a-Hero-S01E01:6f80bdc7b2caa787e561661495efda245dd3c2cf"
-      }
+        odyseeUrl: "https://odysee.com/Sentenced-to-Be-a-Hero-S01E01:6"
+      },
     ]
   },
 
-  "one-punch-s3": {
+  onepunch: {
     title: "One Punch Man Season 3",
     meta: "Anime • 2025 • 5 Episodes",
     synopsis:
@@ -139,7 +139,84 @@ const CONTENT_DB = {
       {
         number: 5,
         name: "Episode 5",
-        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E05-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:2d7fcc6179a16d088f2ac818c855cf5b68236556"
+        odyseeUrl: "https://odysee.com/-AnimeDubHindi--One-Punch-Man-S03E05-1080P-x264-WEB-DL--Hindi-Eng-Jap--ESub:2"
+      }
+    ]
+  },
+
+  lotm: {
+    title: "Lord of Mysteries",
+    meta: "Anime • 2026 • 13 Episode",
+    synopsis:
+      "In a Victorian world of steam, dreadnoughts, and occult horrors, Zhou Mingrui awakens as Klein Moretti. He walks a razor’s edge between light and darkness, entangled with warring Churches. This is the legend of unlimited potential…and unspeakable danger. (Source: Crunchyroll)",
+    poster: "Posters/Lord of Mysteries Poster.jpg",
+    episodeThumb: "EPoster/Lord.jpg",
+    type: "series",
+    episodes: [
+      {
+        number: 1,
+        name: "Episode 1",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E01:4"
+      },
+      {
+        number: 2,
+        name: "Episode 2",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E02:4"
+      },
+      {
+        number: 3,
+        name: "Episode 3",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E03:5"
+      },
+      {
+        number: 4,
+        name: "Episode 4",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E04:7"
+      },
+      {
+        number: 5,
+        name: "Episode 5",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E05:1"
+      },
+      {
+        number: 6,
+        name: "Episode 6",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E06:1"
+      },
+      {
+        number: 7,
+        name: "Episode 7",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E07:5"
+      },
+      {
+        number: 8,
+        name: "Episode 8",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E08:d"
+      },
+      {
+        number: 9,
+        name: "Episode 9",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E09:2"
+      },
+      {
+        number: 10,
+        name: "Episode 10",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E10:3"
+      },
+      {
+        number: 11,
+        name: "Episode 11",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E11:d"
+      },
+      {
+        number: 12,
+        name: "Episode 12",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E12:5"
+      },
+      {
+        number: 13,
+        name: "Episode 13",
+        odyseeUrl: "https://odysee.com/@AndronicAnime:f/Lord-of-Mysteries-S01E13:3"
       }
     ]
   },
