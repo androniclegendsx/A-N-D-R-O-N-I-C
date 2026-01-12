@@ -1,0 +1,12 @@
+    <!-- Netflix series -->
+    <section id="netflix-series" class="section glass">
+      <h2>Netflix Series</h2>
+      <div class="card-row">
+        <article class="card" data-detail="stranger-things">
+          <img src="posters/stranger-things.jpg" alt="Stranger Things" />
+          <h3>Stranger Things</h3>
+        </article>
+      </div>
+    </section>
+
+    <a href="#netflix-series">Netflix Series</a>            Nav Bar

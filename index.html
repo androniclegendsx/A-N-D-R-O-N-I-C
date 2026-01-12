@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A N D R O N I C</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="Andronic.png" />
+</head>
+<body>
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Top navigation -->
+  <header class="nav glass">
+    <div class="brand">
+      <img src="Andronic.png" alt="A Stream Logo" class="logo-icon" />
+      <div class="logo">A N D R O N I C</div>
+    </div>
+
+    <!-- Search -->
+    <div class="nav-search">
+  <div class="search-inner">
+    <span class="search-icon">🔍</span>
+    <input
+        type="text"
+        id="searchInput"
+        name="stream-search"
+        placeholder="Search titles..."
+        autocomplete="off"
+    />
+  </div>
+</div>
+
+    <nav class="nav-links">
+      <a href="#anime">Anime</a>
+      <a href="#anime-movies">Anime Movies</a>
+      <a href="#hollywood">Hollywood</a>
+    </nav>
+  </header>
+
+  <!-- Hero slider -->
+  <section class="hero glass">
+    <div class="hero-slide active" data-target="my-status">
+      <img
+        class="hero-image"
+        src="EPoster/My Status.jpg"
+        alt="My Status as an Assassin Obviously Exceeds the Hero's"
+      />
+      <div class="hero-content">
+        <h1>My Status as an Assassin Obviously Exceeds the Hero's</h1>
+        <p>
+          Protagonist Akira Oda, overlooked by classmates, hides his max-level
+          concealment skill during assessment by a corrupt king seeking a hero
+          to fight demons.
+        </p>
+        <button class="btn play-btn" data-target="my-status">Watch Now</button>
+      </div>
+    </div>
+
+    <div class="hero-slide" data-target="sentenced">
+      <img
+        class="hero-image"
+        src="EPoster/Sentenced.jpg"
+        alt="Sentenced To Be a Hero"
+      />
+      <div class="hero-content">
+        <h1>Sentenced To Be a Hero</h1>
+        <p>Humanity fights back when massive titans break through the wall.</p>
+        <button class="btn play-btn" data-target="sentenced">Watch Now</button>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Home content -->
+  <main id="homeMain">
+    <!-- Anime series -->
+    <section id="anime" class="section glass">
+      <h2>Anime Series</h2>
+
+      <div class="rail-wrapper">
+        <button class="rail-arrow left" data-rail="animeRail">&#10094;</button>
+
+        <div class="card-rail" id="animeRail">
+          <article class="card" data-detail="my-status">
+            <img
+              src="Posters/My Status.jpg"
+              alt="My Status as an Assassin Obviously Exceeds the Hero's"
+            />
+            <h3>My Status as an Assassin Obviously Exceeds the Hero's</h3>
+          </article>
+
+          <article class="card" data-detail="sentenced">
+            <img
+              src="Posters/Sentenced Poster.jpg"
+              alt="Sentenced To Be a Hero"
+            />
+            <h3>Sentenced To Be a Hero</h3>
+          </article>
+
+          <article class="card" data-detail="one-punch-s3">
+            <img
+              src="Posters/one-punch-man-season-3.jpg"
+              alt="One Punch Man Season 3"
+            />
+            <h3>One Punch Man Season 3</h3>
+          </article>
+
+          <!-- add more anime series cards here if you want -->
+        </div>
+
+        <button class="rail-arrow right" data-rail="animeRail">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Anime movies -->
+    <section id="anime-movies" class="section glass">
+      <h2>Anime Movies</h2>
+
+      <div class="rail-wrapper">
+        <button class="rail-arrow left" data-rail="animeMoviesRail">
+          &#10094;
+        </button>
+
+        <div class="card-rail" id="animeMoviesRail">
+          <article class="card" data-detail="suzume">
+            <img src="Posters/SuzumePoster.jpg" alt="Suzume" />
+            <h3>Suzume</h3>
+          </article>
+
+          <!-- more anime movie cards if needed -->
+        </div>
+
+        <button class="rail-arrow right" data-rail="animeMoviesRail">
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <!-- Hollywood movies -->
+    <section id="hollywood" class="section glass">
+      <h2>Hollywood Movies</h2>
+
+      <div class="rail-wrapper">
+        <button class="rail-arrow left" data-rail="hollywoodRail">
+          &#10094;
+        </button>
+
+        <div class="card-rail" id="hollywoodRail">
+          <article class="card" data-detail="KvsG">
+            <img
+              src="Posters/KxG NE Poster.jpg"
+              alt="Godzilla x Kong The New Empire"
+            />
+            <h3>Godzilla x Kong The New Empire</h3>
+          </article>
+
+          <!-- more Hollywood cards here if you want -->
+        </div>
+
+        <button class="rail-arrow right" data-rail="hollywoodRail">
+          &#10095;
+        </button>
+      </div>
+    </section>
+
+    <!-- Search results (hidden by default) -->
+    <section id="searchSection" class="section glass hidden">
+      <h2>Search Result</h2>
+      <div class="search-list" id="searchList"></div>
+    </section>
+  </main>
+
+  <!-- Full-page watch view -->
+  <section id="watchPage" class="watch-page hidden">
+    <button class="back-btn" id="backHome">&larr; Back</button>
+
+    <div class="watch-layout glass">
+      <div class="watch-header">
+        <img id="watchPoster" class="watch-poster" src="" alt="Poster" />
+        <div class="watch-info">
+          <h1 id="watchTitle"></h1>
+          <p id="watchMeta"></p>
+          <p id="watchSynopsis"></p>
+        </div>
+      </div>
+
+      <div class="watch-body">
+        <div class="video-wrapper">
+          <iframe
+            id="watchVideo"
+            src=""
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="episodes" id="watchEpisodes"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
